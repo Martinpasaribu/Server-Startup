@@ -1,6 +1,6 @@
 import express from 'express';
-
 import { LeadControllers } from '../controllers/lead_controllers';
+
 
 const LeadRoutes: express.Router = express.Router();
 

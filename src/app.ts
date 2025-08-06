@@ -1,6 +1,7 @@
 import express from 'express';
 import LeadRoutes from './routes/lead_routes';
 import cors from 'cors';
+import SmsRoutes from './routes/sms_routes';
 
 const app = express();
 
@@ -30,5 +31,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/lead', LeadRoutes);
+app.use('/api/v1/sms', SmsRoutes);
 
 export default app;

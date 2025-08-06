@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const lead_routes_1 = __importDefault(require("./routes/lead_routes"));
 const cors_1 = __importDefault(require("cors"));
+const sms_routes_1 = __importDefault(require("./routes/sms_routes"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
     origin: [
@@ -22,4 +23,5 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Server Startup!');
 });
 app.use('/api/v1/lead', lead_routes_1.default);
+app.use('/api/v1/sms', sms_routes_1.default);
 exports.default = app;
