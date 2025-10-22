@@ -1,0 +1,2 @@
+npm install express mongoose passport passport-google-oauth20 jsonwebtoken cookie-parser dotenv
+npm install --save-dev @types/express @types/passport @types/passport-google-oauth20 @types/jsonwebtoken @types/cookie-parser @types/node typescript ts-node nodemon

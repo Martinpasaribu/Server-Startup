@@ -12,23 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const dotenv_1 = __importDefault(require("dotenv"));
-const app_1 = __importDefault(require("./app"));
-dotenv_1.default.config();
-const PORT = process.env.PORT || 5000;
-const startServer = () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        // await connectToDatabase();
-        console.log('Server Read Database');
-        app_1.default.listen(process.env.PORT, () => {
-            console.log(`Server Active on Port ${process.env.PORT}`);
-        });
-    }
-    catch (error) {
-        console.error("Failed to connect to MongoDB:", error);
-        process.exit(1);
-    }
-});
-startServer.keepAliveTimeout = 60000; // 60 detik
-startServer.headersTimeout = 65000;
-startServer();
+const express_1 = require("express");
+const user_models_1 = __importDefault(require("../models/user_models"));
+const verifyToken_1 = require("../middlewares/verifyToken");
+const CustomerRouter = (0, express_1.Router)();
+CustomerRouter.get("/", verifyToken_1.verifyToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const userData = req.user;
+    const user = yield user_models_1.default.findById(userData.id).select("email name picture");
+    res.json(user);
+}));
+exports.default = CustomerRouter;

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { ClickUsaha } from '../config/db_monggo_config';
 
 
 interface ILead extends Document{
@@ -18,6 +19,6 @@ const SmsSchema = new mongoose.Schema({
     }
 );
 
-const  SmsModel = mongoose.model<ILead>('Sms', SmsSchema,'Sms');
+const  SmsModel = ClickUsaha.model<ILead>('Sms', SmsSchema,'Sms');
 
 export default SmsModel;
