@@ -12,7 +12,7 @@ passport.use(
       clientID: process.env.GOOGLE_CLIENT_ID as string,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
       callbackURL:
-        process.env.GOOGLE_CALLBACK_URL ||
+        process.env.GOOGLE_CALLBACK_URL || "https://server-startup.vercel.app/api/v1/auth/google/callback" ||
         "http://localhost:5000/api/v1/auth/google/callback",
     },
 async (accessToken, refreshToken, profile, done) => {

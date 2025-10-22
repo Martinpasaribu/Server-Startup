@@ -58,7 +58,7 @@ const googleCallback = (req, res) => __awaiter(void 0, void 0, void 0, function*
             maxAge: 5 * 60 * 1000, // 5 menit
         });
         // 🌍 Redirect ke FE
-        const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
+        const frontendUrl = process.env.FRONTEND_URL || "https://server-startup.vercel.app";
         const redirectTo = redirectCookie ? redirectCookie : `${frontendUrl}/`;
         // res.clearCookie("redirect_after_login");
         const redirectURL = `${frontendUrl}/en/auth/success?redirect=${encodeURIComponent(redirectTo)}`;

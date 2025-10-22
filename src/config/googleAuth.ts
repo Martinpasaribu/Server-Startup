@@ -2,6 +2,7 @@ import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import dotenv from "dotenv";
 import User from "../models/user_models";
+import UserModel from "../models/user_models";
 
 dotenv.config();
 
@@ -14,10 +15,10 @@ passport.use(
     },
     async (_accessToken, _refreshToken, profile, done) => {
       try {
-        const existingUser = await User.findOne({ googleId: profile.id });
+        const existingUser = await UserModel.findOne({ googleId: profile.id });
         if (existingUser) return done(null, existingUser);
 
-        const newUser = await User.create({
+        const newUser = await UserModel.create({
           googleId: profile.id,
           name: profile.displayName,
           email: profile.emails?.[0].value,
