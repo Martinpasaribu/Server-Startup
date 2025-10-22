@@ -55,14 +55,16 @@ export const googleCallback: RequestHandler = async (req: any, res: any): Promis
 res.cookie("refreshToken", refreshToken, {
        httpOnly: true,
         sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
+        // secure: process.env.NODE_ENV === "production",
+        secure: true,
         maxAge: 10 * 60 * 1000, // 5 menit
 });
 
 res.cookie("accessToken", accessToken, {
        httpOnly: true,
         sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
+        // secure: process.env.NODE_ENV === "production",
+        secure: true,
         maxAge: 5 * 60 * 1000, // 5 menit
 });
 
@@ -70,7 +72,7 @@ res.cookie("accessToken", accessToken, {
 
 
     // 🌍 Redirect ke FE
-    const frontendUrl = process.env.FRONTEND_URL || "https://server-startup.vercel.app";
+    const frontendUrl = process.env.FRONTEND_URL || "https://www.clickusaha.com";
     const redirectTo = redirectCookie ? redirectCookie : `${frontendUrl}/`;
     // res.clearCookie("redirect_after_login");
 
