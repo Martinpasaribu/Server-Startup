@@ -55,9 +55,9 @@ dotenv.config();
 // dotenv.config();
 
 // URI MongoDB dari environment variable
-const mongoURI: string = process.env.MongoDB_cloud || "";
-const mongoUser: string = process.env.MongoDB_user || "";
-const mongoPass: string = process.env.MongoDB_pass || "";
+const mongoURI: string = process.env.MongoDB_cloud_2 || "";
+const mongoUser: string = process.env.MongoDB_user_2 || "";
+const mongoPass: string = process.env.MongoDB_pass_2 || "";
 
 // console.log(" Env : ", process.env.MongoDB_cloud);
 

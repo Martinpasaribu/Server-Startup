@@ -52,9 +52,9 @@ dotenv_1.default.config();
 // // Memuat variabel lingkungan dari file .env
 // dotenv.config();
 // URI MongoDB dari environment variable
-const mongoURI = process.env.MongoDB_cloud || "";
-const mongoUser = process.env.MongoDB_user || "";
-const mongoPass = process.env.MongoDB_pass || "";
+const mongoURI = process.env.MongoDB_cloud_2 || "";
+const mongoUser = process.env.MongoDB_user_2 || "";
+const mongoPass = process.env.MongoDB_pass_2 || "";
 // console.log(" Env : ", process.env.MongoDB_cloud);
 if (!mongoURI) {
     throw new Error("MongoDB URI tidak ditemukan di environment variables.");
