@@ -21,5 +21,5 @@ const userSchema = new Schema<IUser>(
   { timestamps: true }
 );
 
-const UserModel = Nest_Js.model("User", userSchema);
+const UserModel = Nest_Js.model("users", userSchema);
 export default UserModel;

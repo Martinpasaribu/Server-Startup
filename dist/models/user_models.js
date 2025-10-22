@@ -9,5 +9,5 @@ const userSchema = new mongoose_1.Schema({
     avatar: { type: String },
     refreshToken: { type: String, default: null },
 }, { timestamps: true });
-const UserModel = db_monggo_config_1.Nest_Js.model("User", userSchema);
+const UserModel = db_monggo_config_1.Nest_Js.model("users", userSchema);
 exports.default = UserModel;
