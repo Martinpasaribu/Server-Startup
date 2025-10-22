@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
-import { Nest_Js } from "../config/db_monggo_config";
+// import { Nest_Js } from "../config/db_monggo_config";
 
 // ======================
 // 🧩 Interface untuk Reply
@@ -107,4 +107,4 @@ const BlogSchema = new Schema<BlogDocument>(
 // ======================
 // 🚀 Export Model
 // ======================
-export const BlogModel = Nest_Js.model<BlogDocument>("blogs", BlogSchema);
+export const BlogModel = mongoose.model<BlogDocument>("blogs", BlogSchema);

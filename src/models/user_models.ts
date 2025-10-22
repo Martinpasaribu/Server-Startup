@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
-import { ClickUsaha, Nest_Js } from "../config/db_monggo_config";
+// import { ClickUsaha, Nest_Js } from "../config/db_monggo_config";
 
 export interface IUser extends Document {
     _id:string
@@ -21,5 +21,5 @@ const userSchema = new Schema<IUser>(
   { timestamps: true }
 );
 
-const UserModel = Nest_Js.model("users", userSchema);
+const UserModel = mongoose.model("users", userSchema);
 export default UserModel;

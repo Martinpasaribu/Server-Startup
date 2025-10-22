@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { ClickUsaha } from '../config/db_monggo_config';
+// import { ClickUsaha } from '../config/db_monggo_config';
 
 
 interface ILead extends Document{
@@ -26,6 +26,6 @@ const LeadSchema = new mongoose.Schema({
     }
 );
 
-const  LeadModel = ClickUsaha.model<ILead>('Lead', LeadSchema,'Lead');
+const  LeadModel = mongoose.model<ILead>('Lead', LeadSchema,'Lead');
 
 export default LeadModel;

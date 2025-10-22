@@ -35,7 +35,6 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BlogModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const db_monggo_config_1 = require("../config/db_monggo_config");
 // ======================
 // 🧱 Schema untuk Reply
 // ======================
@@ -81,4 +80,4 @@ const BlogSchema = new mongoose_1.Schema({
 // ======================
 // 🚀 Export Model
 // ======================
-exports.BlogModel = db_monggo_config_1.Nest_Js.model("blogs", BlogSchema);
+exports.BlogModel = mongoose_1.default.model("blogs", BlogSchema);

@@ -13,12 +13,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
+// import { ClickUsaha,Nest_Js } from './config/db_monggo_config';
+const db_monggo_config_1 = require("./config/db_monggo_config");
 const app_1 = __importDefault(require("./app"));
 dotenv_1.default.config();
 const PORT = process.env.PORT || 5000;
 const startServer = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // await connectToDatabase();
+        yield (0, db_monggo_config_1.connectToMongoDB)();
         console.log('Server Read Database');
         app_1.default.listen(process.env.PORT, () => {
             console.log(`Server Active on Port ${process.env.PORT}`);

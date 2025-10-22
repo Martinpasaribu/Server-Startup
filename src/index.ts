@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 
-import { ClickUsaha,Nest_Js } from './config/db_monggo_config';
+// import { ClickUsaha,Nest_Js } from './config/db_monggo_config';
+import { connectToMongoDB } from "./config/db_monggo_config";
 
 import app from './app';
 
@@ -12,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 const startServer = async () => {
     try {
         
-        // await connectToDatabase();
+        await connectToMongoDB()
 
 
         console.log('Server Read Database');
