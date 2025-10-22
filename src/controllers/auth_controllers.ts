@@ -54,7 +54,7 @@ export const googleCallback: RequestHandler = async (req: any, res: any): Promis
 
 res.cookie("refreshToken", refreshToken, {
        httpOnly: true,
-        sameSite: "lax",
+         sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
         // secure: process.env.NODE_ENV === "production",
         secure: true,
         maxAge: 10 * 60 * 1000, // 5 menit
@@ -62,7 +62,7 @@ res.cookie("refreshToken", refreshToken, {
 
 res.cookie("accessToken", accessToken, {
        httpOnly: true,
-        sameSite: "lax",
+         sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
         // secure: process.env.NODE_ENV === "production",
         secure: true,
         maxAge: 5 * 60 * 1000, // 5 menit

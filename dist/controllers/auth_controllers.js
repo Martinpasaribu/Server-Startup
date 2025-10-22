@@ -47,14 +47,14 @@ const googleCallback = (req, res) => __awaiter(void 0, void 0, void 0, function*
         }
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            sameSite: "lax",
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
             // secure: process.env.NODE_ENV === "production",
             secure: true,
             maxAge: 10 * 60 * 1000, // 5 menit
         });
         res.cookie("accessToken", accessToken, {
             httpOnly: true,
-            sameSite: "lax",
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
             // secure: process.env.NODE_ENV === "production",
             secure: true,
             maxAge: 5 * 60 * 1000, // 5 menit
